@@ -235,7 +235,6 @@ namespace ConsoleApp74
                     sqlCommand.Connection = connection;
                     sqlCommand.CommandText = "select * from CarType where id = @Id ";
                     sqlCommand.Parameters.Add(new SqlParameter("@Id",car.Id));
-
                     using (SqlDataReader reader = sqlCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -278,9 +277,7 @@ namespace ConsoleApp74
       
 
         public int Id { get; set; }
-
         public float Coef { get; set; }
-
         public bool IsClosed { get; set; }
 
         public const string CONNECTION_STRING = "Data Source=.;Initial Catalog = CarsDb; Integrated Security = True; Encrypt=False";
